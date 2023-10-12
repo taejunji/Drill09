@@ -132,10 +132,10 @@ class AutoRun:
         if get_time() - boy.start_time > 5.0:
             boy.state_machine.handle_event(('TIME_OUT', 0))
 
-        if boy.dir == 1 and boy.x > 400:
+        if boy.dir == 1 and boy.x > 730:
             boy.dir = -1
             boy.action = 0
-        elif boy.dir == -1 and boy.x < -400:
+        elif boy.dir == -1 and boy.x < 70:
             boy.dir = 1
             boy.action = 1
 
@@ -145,13 +145,12 @@ class AutoRun:
     def draw(boy):
         if boy.action == 0:
             boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, 100, 100,
-                                          math.pi / 2, ''
-                                          , boy.x - 25, boy.y, 200, 200)
+                                          0, ''
+                                          , boy.x, boy.y+35, 200, 200)
         else:
             boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, 100, 100,
-                                          math.pi / 2, ''
-                                          , boy.x - 25, boy.y, 200, 200)
-
+                                         0, ''
+                                          , boy.x, boy.y+35, 200, 200)
 
 
 class StateMachine:
