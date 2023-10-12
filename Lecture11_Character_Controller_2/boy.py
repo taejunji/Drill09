@@ -156,7 +156,7 @@ class AutoRun:
 class StateMachine:
     def __init__(self, boy):
         self.boy = boy
-        self.cur_state = AutoRun
+        self.cur_state = Idle
         self.table = {
             Sleep: {right_down: Run, left_down: Run, right_up: Run, left_up: Run, space_down: Idle},
             Run: {right_down: Idle, left_down: Idle, right_up: Idle, left_up: Idle},
